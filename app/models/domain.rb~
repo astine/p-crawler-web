@@ -1,0 +1,3 @@
+class Domain
+  include Mongoid::Document
+end
