@@ -4,6 +4,6 @@ class ManualClassifierController < ActionController::Base
   protect_from_forgery with: :exception
 
   def sample
-    @foo = "bar"
+    @domain = Domain.limit(-1).skip(rand(Domain.count)).first
   end
 end
