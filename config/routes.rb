@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'manual' => 'manual_classifier#show_page'
+  get 'manual/adddomain' => 'manual_classifier#new_page'
   get 'manual/submit' => 'manual_classifier#save_classification'
   
   # The priority is based upon order of creation: first created -> highest priority.

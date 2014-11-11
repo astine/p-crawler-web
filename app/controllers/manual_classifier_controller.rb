@@ -7,8 +7,15 @@ class ManualClassifierController < ActionController::Base
     @domain = Domain.limit(-1).skip(rand(Domain.count)).first
   end
 
+  def new_page
+  end
+
   def save_classification
-    @domain = Domain.find(params[:domain])
+    begin
+      @domain = Domain.find(params[:domain])
+    rescue
+      @domain = Domain.new({:_id => params[:domain], :domain => params[:domain]})
+    end
     manual_class = {:pornography? => params[:pornography?] == "on",
                     :sexuality? => params[:sexuality?] == "on",
                     :commercial_spam? => params[:commercial_spam?] == "on",
