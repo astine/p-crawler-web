@@ -22,7 +22,7 @@ class ManualClassifierController < ActionController::Base
                     :political? => params[:political?] == "on",
                     :terrorism? => params[:terrorism?] == "on",
                     :illegal_activities? => params[:illegal_activities?] == "on"}
-    @domain.manual_class = manual_class
+    @domain.add_manual_class(manual_class)
     @domain.save
     redirect_to :back
   end
