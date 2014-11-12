@@ -1,0 +1,36 @@
+<div class="col-md-6" style="height:100em">
+  <iframe src="http://<%= @domain.domain %>" sandbox="allow-forms allow-scripts" width="100%" height="100%">
+  </iframe>
+</div>
+<div class="col-md-6">
+  <h3><%= @domain.domain %></h3>
+  <form role="form" action="manual/submit">
+    <input name="domain" value="<%= @domain.domain %>" type="hidden"/>
+    <div class="form-group">
+      <label>Pornography?</label>
+      <input type="checkbox" name="pornography?"/>
+    </div>
+    <div class="form-group">
+      <label>Sexuality?</label>
+      <input type="checkbox" name="sexuality?"/>
+    </div>
+    <div class="form-group">
+      <label>Commercial/Spam?</label>
+      <input type="checkbox" name="commercial_spam?"/>
+    </div>
+    <div class="form-group">
+      <label>Political?</label>
+      <input type="checkbox" name="political?"/>
+    </div>
+    <div class="form-group">
+      <label>Terrorism?</label>
+      <input type="checkbox" name="terrorism?"/>
+    </div>
+    <div class="form-group">
+      <label>Illegal Activities?</label>
+      <input type="checkbox" name="illegal_activities?"/>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
